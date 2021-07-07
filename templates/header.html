@@ -7,14 +7,17 @@
             <span>nav2</span>
             <span>nav3</span>
             {% if not user.is_authenticated %}
-            <a href="{% url 'accountapp:login' %}?nest={{ request.path }}">
+            <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
                 <span>login</span>
+            </a>
+            <a href="{% url 'accountapp:create' %}">
+                <span>SignUp</span>
             </a>
             {% else %}
             <a href="{% url 'accountapp:detail' pk=user.pk %}">
                 <span>MyPage</span>
             </a>
-            <a href="{% url 'accountapp:logout' %}?nest={{ request.path }}">
+            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
                 <span>logout</span>
             </a>
             {% endif %}
