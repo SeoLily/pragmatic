@@ -1,7 +1,10 @@
-from accountapp.urls import urlpatterns
+from django.urls import path
 
-app_name = 'profile_app'
+from accountapp.urls import urlpatterns
+from profileapp.views import ProfileCreateView
+
+app_name = 'profileapp'
 
 urlpatterns = [
-
+    path('create/', ProfileCreateView.as_view(), name='create'),
 ]
