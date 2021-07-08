@@ -1,6 +1,5 @@
 from django.urls import path
 
-from accountapp.urls import urlpatterns
 from profileapp.views import ProfileCreateView, ProfileUpdateView
 
 app_name = 'profileapp'
