@@ -2,25 +2,26 @@
         <div>
             <h1 class="pragmatic_logo">Pragmatic</h1>
         </div>
-        <div>
-            <a href="{% url 'articleapp:list' %}">
+        <div class="pragmatic_header_navbar">
+            <a href="{% url 'articleapp:list' %}" class="pragmatic_header_nav">
                 <span>Articles</span>
             </a>
-            <span>nav2</span>
-            <span>nav3</span>
+            <a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav">
+                <span>Projects</span>
+            </a>
             {% if not user.is_authenticated %}
             <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
-                <span>login</span>
+                <span>Login</span>
             </a>
-            <a href="{% url 'accountapp:create' %}">
+            <a href="{% url 'accountapp:create' %}" class="pragmatic_header_nav">
                 <span>SignUp</span>
             </a>
             {% else %}
-            <a href="{% url 'accountapp:detail' pk=user.pk %}">
+            <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pragmatic_header_nav">
                 <span>MyPage</span>
             </a>
-            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
-                <span>logout</span>
+            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="pragmatic_header_nav">
+                <span>Logout</span>
             </a>
             {% endif %}
         </div>
