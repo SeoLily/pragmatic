@@ -41,7 +41,7 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
         object_list = Article.objects.filter(project=self.get_object())
         return super(ProjectDetailView, self).get_context_data(object_list=object_list,
                                                                subscription=subscription,
-                                                                **kwargs)
+                                                               **kwargs)
 
 
 class ProjectListView(ListView):
